@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ingrese una persona:</h1>
+    <div class="">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Ingrese el nombre">
+    </div>
+    <div class="">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" placeholder="Ingrese el apellido">
+    </div>
+    <div class="">
+        <label for="dni">DNI</label>
+        <input type="text" id="dni" placeholder="Ingrese el DNI">
+    </div>
+    <div class="">
+        <label for="teléfonos">Ingrese su teléfono(si tiene mas de uno ingreselos separados por coma)</label>
+        <input type="text" id="teléfonos" placeholder="Ej: 3718289932,3704564738">
+    </div>
+    <div class="">
+        <label for="nombre_hijos">Ingrese el nombre de su hijo/a (si tiene mas de uno ingreselos separados por coma )</label>
+        <input type="text" id="nombre_hijos" placeholder="Ingrese el nombre de su hijos/as">
+    </div>
+
+    <button onclick="AgregarPersona()">Agregar</button>
+    <button onclick="MostrarPersona()">Mostrar Datos</button>
+    <button onclick="FiltrarDNI()"></button>
+
+
+    <script src="../static/scripts.js"></script>
+</body>
+</html>
