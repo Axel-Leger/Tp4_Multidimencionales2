@@ -8,6 +8,7 @@ def index():
 
 personas = []
 
+# Agrega al array un objeto de la persona
 @app.route("/agregar", methods =["POST"])
 def agregar():
     data = request.get_json()
@@ -18,6 +19,22 @@ def agregar():
     hijos = data.get("hijos")
 
     personas.append({"Nombre":nombre, "Apellido":apellido,"DNI":dni, "Telefonos":telefonos, "Hijos": hijos })
+
+    return "" , 200
+
+# Envia el array a front
+@app.route("/mostrar", methods = ["GET"])
+def mostrar():
+    return(personas)
+
+# Buscar por dni
+@app.route("/buscar/<dni>",methods = ["GET"])
+def buscar(dni):
+    for persona in personas:
+        if persona["DNI"] == dni:
+             return jsonify(persona), 200
+    return jsonify({"No se encuentra una persona con ese dni"})
+        
 
 
 if __name__ == "__main__":
