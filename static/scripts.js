@@ -39,8 +39,7 @@ async function buscarPorDni() {
     
     const res = await fetch(`/buscar/${dni}`)
     const persona = await res.json()
-    
-   
+
     if (res.ok){
         resultado.textContent = 
        `Nombre: ${persona.Nombre} \nApellido: ${persona.Apellido}\nTelefonos:${persona.Telefonos} \nHijos: ${persona.Hijos}`
