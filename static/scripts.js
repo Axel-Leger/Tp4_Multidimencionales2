@@ -42,7 +42,7 @@ async function buscarPorDni() {
 
     if (res.ok){
         resultado.textContent = 
-       `Nombre: ${persona.Nombre} \nApellido: ${persona.Apellido}\nTelefonos:${persona.Telefonos} \nHijos: ${persona.Hijos}`
+       `Nombre: ${persona.nombre} \nApellido: ${persona.apellido}\nDNI:${persona.dni} \nTelefonos:${persona.telefonos} \nHijos: ${persona.hijos}`
     }else{
         resultado.textContent = "No se encontro una persona con ese dni"
     }

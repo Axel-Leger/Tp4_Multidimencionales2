@@ -18,7 +18,7 @@ def agregar():
     telefonos = data.get("telefonos")
     hijos = data.get("hijos")
 
-    personas.append({"Nombre":nombre, "Apellido":apellido,"DNI":dni, "Telefonos":telefonos, "Hijos": hijos })
+    personas.append([nombre,apellido,dni,telefonos,hijos] )
 
     return "" , 200
 
@@ -31,8 +31,14 @@ def mostrar():
 @app.route("/buscar/<dni>",methods = ["GET"])
 def buscar(dni):
     for persona in personas:
-        if persona["DNI"] == dni:
-             return jsonify(persona), 200
+        if persona[2] == dni:
+            return jsonify({
+                "nombre":persona[0],
+                "apellido":[1],
+                "dni":persona[2],
+                "telefonos":persona[3],
+                "hijos":persona[4] 
+            })
     return jsonify({"No se encuentra una persona con ese dni"})
         
 
